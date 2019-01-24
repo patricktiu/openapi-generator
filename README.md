@@ -1,3 +1,28 @@
+# How to run Microprofile Generator
+
+First, build the project.
+
+```
+mvn install
+```
+
+Create a temporary directory to store the files.
+
+```
+mkdir tmp
+```
+
+Run the generator.
+
+```
+java -jar target/openapi-generator-cli.jar generate \
+  -i ~/Documents/guides/guide-microprofile-openapi/finish/src/main/webapp/META-INF/openapi.yaml \
+  -g microprofile-rest-client \
+  -o tmp \
+  --api-package io.openliberty.guides.inventory.api \
+  --model-package io.openliberty.inventory.models
+```
+
 <h1 align="center">OpenAPI Generator</h1>
 
 <div align="center">
