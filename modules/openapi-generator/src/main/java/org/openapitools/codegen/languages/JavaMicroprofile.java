@@ -89,6 +89,10 @@ public class JavaMicroprofile extends AbstractJavaCodegen
         cliOptions.add(CliOption.newBoolean(USE_LOGGING_FEATURE_FOR_TESTS, "Use Logging Feature for tests"));
 
         cliOptions.add(CliOption.newBoolean(USE_GENERIC_RESPONSE, "Use generic response"));
+
+        // apiTemplateFiles.put("api_exception.mustache", "ApiException.java");
+        // apiTemplateFiles.put("api_exception_mapper.mustache", "ApiExceptionMapper.java");
+
     }
 
 
@@ -114,6 +118,9 @@ public class JavaMicroprofile extends AbstractJavaCodegen
 
 
         supportingFiles.clear(); // Don't need extra files provided by AbstractJAX-RS & Java Codegen
+        String apiFolder = (sourceFolder + File.separator + apiPackage().replace('.', File.separatorChar)).replace('/', File.separatorChar);
+        supportingFiles.add(new SupportingFile("api_exception.mustache", apiFolder, "ApiException.java"));
+        supportingFiles.add(new SupportingFile("api_exception_mapper.mustache", apiFolder, "ApiExceptionMapper.java"));
 
         writeOptional(outputFolder, new SupportingFile("pom.mustache", "", "pom.xml"));
 
