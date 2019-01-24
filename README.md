@@ -15,8 +15,8 @@ mkdir tmp
 Run the generator.
 
 ```
-java -jar target/openapi-generator-cli.jar generate \
-  -i ~/Documents/guides/guide-microprofile-openapi/finish/src/main/webapp/META-INF/openapi.yaml \
+java -jar modules/openapi-generator-cli/target/openapi-generator-cli.jar generate \
+  -i path/to/openapi.yaml \
   -g microprofile-rest-client \
   -o tmp \
   --api-package io.openliberty.guides.inventory.api \
