@@ -1,4 +1,4 @@
-# How to run Microprofile Generator
+# How to run MicroProfile Generator
 
 First, build the project.
 
