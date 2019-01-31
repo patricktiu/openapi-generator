@@ -160,7 +160,7 @@ public class JavaMicroprofile extends AbstractJavaCodegen
 
     @Override
     public String getHelp() {
-        return "Generates a Java JAXRS Client based on Apache CXF framework.";
+        return "Generates a MicroProfile rest client";
     }
 
     public void setUseBeanValidation(boolean useBeanValidation) {
