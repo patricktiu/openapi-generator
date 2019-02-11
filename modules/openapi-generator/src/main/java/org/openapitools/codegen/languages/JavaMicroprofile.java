@@ -18,6 +18,7 @@
 package org.openapitools.codegen.languages;
 
 import io.swagger.v3.oas.models.Operation;
+import io.swagger.v3.oas.models.media.Schema;
 
 import org.openapitools.codegen.CliOption;
 import org.openapitools.codegen.CodegenModel;
@@ -150,6 +151,17 @@ public class JavaMicroprofile extends AbstractJavaCodegen
         model.imports.remove("ApiModel");
         model.imports.remove("JsonSerialize");
         model.imports.remove("ToStringSerializer");
+    }
+
+    @Override
+    public CodegenModel fromModel(String name, Schema model, Map<String, Schema> allDefinitions) {
+        CodegenModel codegenModel = super.fromModel(name, model, allDefinitions);
+        if (codegenModel.imports.contains("ApiModel")) {
+            // Remove io.swagger.annotations.ApiModel import
+            codegenModel.imports.remove("ApiModel");
+        }
+
+        return codegenModel;
     }
 
     @Override
