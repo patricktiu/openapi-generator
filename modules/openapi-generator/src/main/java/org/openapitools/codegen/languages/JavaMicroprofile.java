@@ -82,7 +82,7 @@ public class JavaMicroprofile extends AbstractJavaCodegen
 
         importMapping.put("LocalDate", "org.joda.time.LocalDate");
 
-        embeddedTemplateDir = templateDir = JAXRS_TEMPLATE_DIRECTORY_NAME + File.separator + "cxf";
+        embeddedTemplateDir = templateDir = JAXRS_TEMPLATE_DIRECTORY_NAME + File.separator + "mp";
 
         cliOptions.add(CliOption.newBoolean(USE_BEANVALIDATION, "Use BeanValidation API annotations"));
 
