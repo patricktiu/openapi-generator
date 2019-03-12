@@ -37,7 +37,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Map;
 
-public class JavaMicroprofile extends AbstractJavaCodegen
+public class JavaMicroprofileCodegen extends AbstractJavaCodegen
         implements BeanValidationFeatures, UseGenericResponseFeatures, GzipTestFeatures, LoggingTestFeatures {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JavaCXFClientCodegen.class);
@@ -56,7 +56,7 @@ public class JavaMicroprofile extends AbstractJavaCodegen
 
     protected boolean useLoggingFeatureForTests = false;
 
-    public JavaMicroprofile() {
+    public JavaMicroprofileCodegen() {
         super();
 
         supportsInheritance = true;
