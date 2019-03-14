@@ -122,7 +122,6 @@ public class JavaMicroprofileCodegen extends AbstractJavaCodegen
         String apiFolder = (sourceFolder + File.separator + apiPackage().replace('.', File.separatorChar)).replace('/', File.separatorChar);
         supportingFiles.add(new SupportingFile("api_exception.mustache", apiFolder, "ApiException.java"));
         supportingFiles.add(new SupportingFile("api_exception_mapper.mustache", apiFolder, "ApiExceptionMapper.java"));
-        supportingFiles.add(new SupportingFile("README.mustache", "", "README.md"));
 
         writeOptional(outputFolder, new SupportingFile("pom.mustache", "", "pom.xml"));
 
