@@ -40,7 +40,7 @@ import java.util.Map;
 public class JavaMicroprofileCodegen extends AbstractJavaCodegen
         implements BeanValidationFeatures, UseGenericResponseFeatures, GzipTestFeatures, LoggingTestFeatures {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(JavaCXFClientCodegen.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(JavaMicroprofileCodegen.class);
 
     /**
      * Name of the sub-directory in "src/main/resource" where to find the
@@ -63,7 +63,7 @@ public class JavaMicroprofileCodegen extends AbstractJavaCodegen
 
         sourceFolder = "src/gen/java";
         invokerPackage = "org.openapitools.api";
-        artifactId = "openapi-jaxrs-client";
+        artifactId = "gen-microprofile-rest-client";
         dateLibrary = "legacy"; //TODO: add joda support to all jax-rs
 
         apiPackage = "org.openapitools.api";
