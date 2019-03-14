@@ -82,7 +82,7 @@ public class JavaMicroprofileCodegen extends AbstractJavaCodegen
 
         importMapping.put("LocalDate", "org.joda.time.LocalDate");
 
-        embeddedTemplateDir = templateDir = JAXRS_TEMPLATE_DIRECTORY_NAME + File.separator + "mp";
+        embeddedTemplateDir = templateDir = JAXRS_TEMPLATE_DIRECTORY_NAME;
 
         cliOptions.add(CliOption.newBoolean(USE_BEANVALIDATION, "Use BeanValidation API annotations"));
 
@@ -122,6 +122,7 @@ public class JavaMicroprofileCodegen extends AbstractJavaCodegen
         String apiFolder = (sourceFolder + File.separator + apiPackage().replace('.', File.separatorChar)).replace('/', File.separatorChar);
         supportingFiles.add(new SupportingFile("api_exception.mustache", apiFolder, "ApiException.java"));
         supportingFiles.add(new SupportingFile("api_exception_mapper.mustache", apiFolder, "ApiExceptionMapper.java"));
+        supportingFiles.add(new SupportingFile("README.mustache", "", "README.md"));
 
         writeOptional(outputFolder, new SupportingFile("pom.mustache", "", "pom.xml"));
 
