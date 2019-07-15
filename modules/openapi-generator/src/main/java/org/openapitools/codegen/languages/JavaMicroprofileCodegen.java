@@ -155,8 +155,8 @@ public class JavaMicroprofileCodegen extends AbstractJavaCodegen
     }
 
     @Override
-    public CodegenModel fromModel(String name, Schema model, Map<String, Schema> allDefinitions) {
-        CodegenModel codegenModel = super.fromModel(name, model, allDefinitions);
+    public CodegenModel fromModel(String name, Schema model) {
+        CodegenModel codegenModel = super.fromModel(name, model);
         if (codegenModel.imports.contains("ApiModel")) {
             // Remove io.swagger.annotations.ApiModel import
             codegenModel.imports.remove("ApiModel");

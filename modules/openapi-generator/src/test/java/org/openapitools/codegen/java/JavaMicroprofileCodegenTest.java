@@ -53,7 +53,7 @@ public class JavaMicroprofileCodegenTest {
         final Map<String, Schema> allDefinitions = Collections.<String, Schema>singletonMap("Pet", new ObjectSchema());
 
         final JavaMicroprofileCodegen codegen = new JavaMicroprofileCodegen();
-        final CodegenOperation co = codegen.fromOperation("getAllPets", "GET", operation, allDefinitions);
+        final CodegenOperation co = codegen.fromOperation("getAllPets", "GET", operation, null);
 
         Map<String, Object> objs = new HashMap<>();
         objs.put("operations", Collections.singletonMap("operation", Collections.singletonList(co)));
