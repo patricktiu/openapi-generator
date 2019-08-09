@@ -75,6 +75,9 @@ public class {{classname}} {{#parent}}extends {{{parent}}}{{/parent}}{{#serializ
   }{{/isEnum}}
 
   {{^isReadOnly}}
+  /**
+    * Set {{name}}
+  **/
   public void {{setter}}({{{datatypeWithEnum}}} {{name}}) {
     this.{{name}} = {{name}};
   }
@@ -101,6 +104,9 @@ public class {{classname}} {{#parent}}extends {{{parent}}}{{/parent}}{{#serializ
 
   {{/vars}}
 
+  /**
+    * Create a string representation of this pojo.
+  **/
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
