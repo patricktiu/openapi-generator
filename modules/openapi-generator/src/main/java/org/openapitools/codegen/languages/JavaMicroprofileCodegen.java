@@ -64,7 +64,7 @@ public class JavaMicroprofileCodegen extends AbstractJavaCodegen
         sourceFolder = "src/gen/java";
         invokerPackage = "org.openapitools.api";
         artifactId = "gen-microprofile-rest-client";
-        dateLibrary = "legacy"; //TODO: add joda support to all jax-rs
+        dateLibrary = "legacy";
 
         apiPackage = "org.openapitools.api";
         modelPackage = "org.openapitools.model";
@@ -73,7 +73,6 @@ public class JavaMicroprofileCodegen extends AbstractJavaCodegen
 
         // clear model and api doc template as this codegen
         // does not support auto-generated markdown doc at the moment
-        //TODO: add doc templates
         modelDocTemplateFiles.remove("model_doc.mustache");
         apiDocTemplateFiles.remove("api_doc.mustache");
 
@@ -90,9 +89,6 @@ public class JavaMicroprofileCodegen extends AbstractJavaCodegen
         cliOptions.add(CliOption.newBoolean(USE_LOGGING_FEATURE_FOR_TESTS, "Use Logging Feature for tests"));
 
         cliOptions.add(CliOption.newBoolean(USE_GENERIC_RESPONSE, "Use generic response"));
-
-        // apiTemplateFiles.put("api_exception.mustache", "ApiException.java");
-        // apiTemplateFiles.put("api_exception_mapper.mustache", "ApiExceptionMapper.java");
 
     }
 
