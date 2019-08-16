@@ -33,6 +33,12 @@ java -jar modules/openapi-generator-cli/target/openapi-generator-cli.jar generat
 [![Windows Test](https://ci.appveyor.com/api/projects/status/github/openapitools/openapi-generator?branch=master&svg=true&passingText=Windows%20Test%20-%20OK&failingText=Windows%20Test%20-%20Fails)](https://ci.appveyor.com/project/WilliamCheng/openapi-generator-wh2wu)
 [![JDK11 Build](https://cloud.drone.io/api/badges/OpenAPITools/openapi-generator/status.svg?ref=refs/heads/master)](https://cloud.drone.io/OpenAPITools/openapi-generator)
 
+[`4.2.x`](https://github.com/OpenAPITools/openapi-generator/tree/4.2.x) branch: [![Build Status](https://img.shields.io/travis/OpenAPITools/openapi-generator/4.2.x.svg?label=Integration%20Test)](https://travis-ci.org/OpenAPITools/openapi-generator)
+[![Integration Test2](https://circleci.com/gh/OpenAPITools/openapi-generator/tree/4.2.x.svg?style=shield)](https://circleci.com/gh/OpenAPITools/openapi-generator)
+[![Run Status](https://api.shippable.com/projects/5af6bf74e790f4070084a115/badge?branch=4.2.x)](https://app.shippable.com/github/OpenAPITools/openapi-generator)
+[![Windows Test](https://ci.appveyor.com/api/projects/status/github/openapitools/openapi-generator?branch=4.2.x&svg=true&passingText=Windows%20Test%20-%20OK&failingText=Windows%20Test%20-%20Fails)](https://ci.appveyor.com/project/WilliamCheng/openapi-generator-wh2wu)
+[![JDK11 Build](https://cloud.drone.io/api/badges/OpenAPITools/openapi-generator/status.svg?ref=refs/heads/4.2.x)](https://cloud.drone.io/OpenAPITools/openapi-generator)
+
 [`5.0.x`](https://github.com/OpenAPITools/openapi-generator/tree/5.0.x) branch: [![Build Status](https://img.shields.io/travis/OpenAPITools/openapi-generator/5.0.x.svg?label=Integration%20Test)](https://travis-ci.org/OpenAPITools/openapi-generator)
 [![Integration Test2](https://circleci.com/gh/OpenAPITools/openapi-generator/tree/5.0.x.svg?style=shield)](https://circleci.com/gh/OpenAPITools/openapi-generator)
 [![Run Status](https://api.shippable.com/projects/5af6bf74e790f4070084a115/badge?branch=5.0.x)](https://app.shippable.com/github/OpenAPITools/openapi-generator)
@@ -126,8 +132,9 @@ The OpenAPI Specification has undergone 3 revisions since initial creation in 20
 OpenAPI Generator Version    | Release Date | Notes
 ---------------------------- | ------------ | -----
 5.0.0 (upcoming major release) [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/5.0.0-SNAPSHOT/)| 13.05.2020 | Major release with breaking changes (no fallback)
-4.1.0 (upcoming minor release) [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/4.1.0-SNAPSHOT/)| 31.07.2019 | Minor release (breaking changes with fallbacks)
-[4.1.0](https://github.com/OpenAPITools/openapi-generator/releases/tag/v4.1.0) (latest stable release) | 09.07.2019 | Patch release (bug fixes, minor enhancements, etc)
+4.2.0 (upcoming minor release) [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/4.2.0-SNAPSHOT/)| 09.10.2019 | Minor release (breaking changes with fallbacks)
+4.1.1 (upcoming minor release) [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/4.1.1-SNAPSHOT/)| 23.08.2019 | Patch release (bug fixes, enhancements)
+[4.1.0](https://github.com/OpenAPITools/openapi-generator/releases/tag/v4.1.0) (latest stable release) | 09.08.2019 | Minor release (breaking changes with fallbacks)
 
 OpenAPI Spec compatibility: 1.0, 1.1, 1.2, 2.0, 3.0
 
@@ -473,7 +480,6 @@ NAME
 SYNOPSIS
         openapi-generator-cli generate
                 [(-a <authorization> | --auth <authorization>)]
-                [--additional-properties <additional properties>...]
                 [--api-package <api package>] [--artifact-id <artifact id>]
                 [--artifact-version <artifact version>]
                 [(-c <configuration file> | --config <configuration file>)]
@@ -494,12 +500,13 @@ SYNOPSIS
                 [--model-name-prefix <model name prefix>]
                 [--model-name-suffix <model name suffix>]
                 [--model-package <model package>]
-                [(-o <output directory> | --output <output directory>)]
+                [(-o <output directory> | --output <output directory>)] 
+                [(-p <additional properties> | --additional-properties <additional properties>)...]
                 [--package-name <package name>] [--release-note <release note>]
                 [--remove-operation-id-prefix]
                 [--reserved-words-mappings <reserved word mappings>...]
-                [(-s | --skip-overwrite)] [--skip-validate-spec]
-                [--strict-spec <true/false strict behavior>]
+                [(-s | --skip-overwrite)] [--server-variables <server variables>...]
+                [--skip-validate-spec] [--strict-spec <true/false strict behavior>]
                 [(-t <template directory> | --template-dir <template directory>)]
                 [--type-mappings <type mappings>...] [(-v | --verbose)]
 
@@ -815,7 +822,7 @@ If you want to join the committee, please kindly apply by sending an email to te
 | Apex      |  |
 | Bash      | @frol (2017/07) @bkryza (2017/08) @kenjones-cisco (2017/09) |
 | C         | @zhemant (2018/11) |
-| C++       | @ravinikam (2017/07) @stkrwork (2017/07) @etherealjoy (2018/02) @martindelille (2018/03) |
+| C++       | @ravinikam (2017/07) @stkrwork (2017/07) @etherealjoy (2018/02) @martindelille (2018/03) @muttleyxd (2019/08) |
 | C#        | @mandrean (2017/08), @jimschubert (2017/09) [:heart:](https://www.patreon.com/jimschubert) |
 | Clojure   |  |
 | Dart      | @ircecho (2017/07) @swipesight (2018/09) @jaumard (2018/09) |
