@@ -40,7 +40,7 @@ import java.util.Map;
 {{/generateSpringBootApplication}}
 public class {{classname}}Test {
 
-    private DefaultApi client;
+    private {{classname}} client;
     private String baseUrl = "http://localhost:9080";
     
     @Before
@@ -48,7 +48,7 @@ public class {{classname}}Test {
         client = RestClientBuilder.newBuilder()
                         .baseUrl(new URL(baseUrl))
                         .register(ApiException.class)
-                        .build(DefaultApi.class);
+                        .build({{classname}}.class);
     }
 
     {{#operations}}{{#operation}}
