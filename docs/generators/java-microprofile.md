@@ -43,3 +43,4 @@ sidebar_label: java-microprofile
 |parentVersion|parent version in generated pom N.B. parentGroupId, parentArtifactId and parentVersion must all be specified for any of them to take effect| |null|
 |snapshotVersion|Uses a SNAPSHOT version.|<dl><dt>**true**</dt><dd>Use a SnapShot Version</dd><dt>**false**</dt><dd>Use a Release Version</dd><dl>|null|
 |useGenericResponse|Use generic response| |false|
+|disableMultipart|Disable multipart annotations| |false|

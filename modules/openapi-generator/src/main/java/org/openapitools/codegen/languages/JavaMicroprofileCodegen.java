@@ -46,6 +46,8 @@ public class JavaMicroprofileCodegen extends AbstractJavaCodegen
      * Mustache template for the JAX-RS Codegen.
      */
     protected static final String JAXRS_TEMPLATE_DIRECTORY_NAME = "JavaMicroprofile";
+    
+    protected static final String DISABLE_MULTIPART = "disableMultipart";
 
     protected boolean useBeanValidation = false;
 
@@ -88,7 +90,7 @@ public class JavaMicroprofileCodegen extends AbstractJavaCodegen
         cliOptions.add(CliOption.newBoolean(USE_LOGGING_FEATURE_FOR_TESTS, "Use Logging Feature for tests"));
 
         cliOptions.add(CliOption.newBoolean(USE_GENERIC_RESPONSE, "Use generic response"));
-
+        cliOptions.add(CliOption.newBoolean(DISABLE_MULTIPART, "Disable multipart import"));
     }
 
 
