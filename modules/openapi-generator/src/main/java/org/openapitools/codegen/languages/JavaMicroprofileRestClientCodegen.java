@@ -36,10 +36,10 @@ import java.io.File;
 import java.util.List;
 import java.util.Map;
 
-public class JavaMicroprofileCodegen extends AbstractJavaCodegen
+public class JavaMicroprofileRestClientCodegen extends AbstractJavaCodegen
         implements BeanValidationFeatures, UseGenericResponseFeatures, GzipTestFeatures, LoggingTestFeatures {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(JavaMicroprofileCodegen.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(JavaMicroprofileRestClientCodegen.class);
 
     /**
      * Name of the sub-directory in "src/main/resource" where to find the
@@ -57,7 +57,7 @@ public class JavaMicroprofileCodegen extends AbstractJavaCodegen
 
     protected boolean useLoggingFeatureForTests = false;
 
-    public JavaMicroprofileCodegen() {
+    public JavaMicroprofileRestClientCodegen() {
         super();
 
         supportsInheritance = true;

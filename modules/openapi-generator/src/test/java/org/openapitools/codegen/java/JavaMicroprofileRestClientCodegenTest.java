@@ -29,7 +29,7 @@ import org.openapitools.codegen.CodegenConstants;
 import org.openapitools.codegen.CodegenOperation;
 import org.openapitools.codegen.CodegenResponse;
 import org.openapitools.codegen.languages.JavaCXFClientCodegen;
-import org.openapitools.codegen.languages.JavaMicroprofileCodegen;
+import org.openapitools.codegen.languages.JavaMicroprofileRestClientCodegen;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -37,7 +37,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class JavaMicroprofileCodegenTest {
+public class JavaMicroprofileRestClientCodegenTest {
 
     @Test
     public void responseWithoutContent() throws Exception {
@@ -51,7 +51,7 @@ public class JavaMicroprofileCodegenTest {
                         .addApiResponse("400", new ApiResponse().description("Error")));
         final Map<String, Schema> allDefinitions = Collections.<String, Schema>singletonMap("Pet", new ObjectSchema());
 
-        final JavaMicroprofileCodegen codegen = new JavaMicroprofileCodegen();
+        final JavaMicroprofileRestClientCodegen codegen = new JavaMicroprofileRestClientCodegen();
         final CodegenOperation co = codegen.fromOperation("getAllPets", "GET", operation, null);
 
         Map<String, Object> objs = new HashMap<>();
@@ -75,7 +75,7 @@ public class JavaMicroprofileCodegenTest {
 
     @Test
     public void testInitialConfigValues() throws Exception {
-        final JavaMicroprofileCodegen codegen = new JavaMicroprofileCodegen();
+        final JavaMicroprofileRestClientCodegen codegen = new JavaMicroprofileRestClientCodegen();
         codegen.processOpts();
 
         Assert.assertEquals(codegen.additionalProperties().get(CodegenConstants.HIDE_GENERATION_TIMESTAMP), Boolean.FALSE);
@@ -91,7 +91,7 @@ public class JavaMicroprofileCodegenTest {
 
     @Test
     public void testSettersForConfigValues() throws Exception {
-        final JavaMicroprofileCodegen codegen = new JavaMicroprofileCodegen();
+        final JavaMicroprofileRestClientCodegen codegen = new JavaMicroprofileRestClientCodegen();
         codegen.setHideGenerationTimestamp(true);
         codegen.setInvokerPackage("org.openapitools.client.xyz.invoker");
         codegen.processOpts();
@@ -108,7 +108,7 @@ public class JavaMicroprofileCodegenTest {
 
     @Test
     public void testAdditionalPropertiesPutForConfigValues() throws Exception {
-        final JavaMicroprofileCodegen codegen = new JavaMicroprofileCodegen();
+        final JavaMicroprofileRestClientCodegen codegen = new JavaMicroprofileRestClientCodegen();
         codegen.additionalProperties().put(CodegenConstants.HIDE_GENERATION_TIMESTAMP, "false");
         codegen.additionalProperties().put(CodegenConstants.INVOKER_PACKAGE,"org.openapitools.client.xyz.invoker");
         codegen.processOpts();
