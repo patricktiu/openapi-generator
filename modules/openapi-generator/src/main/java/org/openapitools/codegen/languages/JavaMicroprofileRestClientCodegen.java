@@ -170,7 +170,7 @@ public class JavaMicroprofileRestClientCodegen extends AbstractJavaCodegen
 
     @Override
     public String getHelp() {
-        return "Generates a MicroProfile rest client";
+        return "Generates a MicroProfile Rest Client";
     }
 
     public void setUseBeanValidation(boolean useBeanValidation) {
